@@ -9,7 +9,6 @@ const HomeTopCategories = ({
   isLoading,
   selectedCurrencyVal,
 }: any) => {
-  console.log("display tag in home home top categories");
 
   const [selectedMultiLangData, setSelectedMultiLangData] = useState<any>();
   const SelectedLangDataFromStore: any = useSelector(

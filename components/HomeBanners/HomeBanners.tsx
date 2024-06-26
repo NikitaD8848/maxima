@@ -1,22 +1,17 @@
 import Image from "next/image";
-import useHomeBanner from "../../hooks/HomePageHooks/HomeBannerHook";
 import Carousel from "react-bootstrap/Carousel";
 import CarouselCaption from "react-bootstrap/CarouselCaption";
 import CarouselItem from "react-bootstrap/CarouselItem";
+import useHomeBanner from "../../hooks/HomePageHooks/HomeBannerHook";
 import { CONSTANTS } from "../../services/config/app-config";
-import loaderGIF from "../../public/assets/images/loader-gif.gif";
-import CardsLoadingLayout from "../../cards/CardsLoadingLayout";
 import BannerLoaderComponent from "./BannerLoaderComponent";
 
 const HomeBanner = () => {
   const { homeBannerData, isLoading }: any = useHomeBanner();
-  console.log("homebanner", homeBannerData, isLoading);
 
   const myLoader = ({ src, width, quality }: any) => {
     return `${CONSTANTS.API_BASE_URL}/${src}?w=${width}&q=${quality || 75}`;
   };
-
-  console.log("home banner loading", isLoading);
   return (
     <>
       <div className="margin_from_nav_l">
