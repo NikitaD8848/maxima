@@ -49,7 +49,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <div>
+    <>
       <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-JEKLX6CZRT"
@@ -66,8 +66,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           <GoogleOAuthProvider clientId="167615153572-iv0g38n21f9in6js7mjec0jql03coicm.apps.googleusercontent.com">
             {' '}
             {/* Add your Google OAuth Client ID */}
-            <div ref={articleRef}>
-              <ErrorBoundary>
+            <ErrorBoundary>
+              <div ref={articleRef}>
                 <Layout>
                   <ToastContainer
                     position="top-right"
@@ -81,12 +81,12 @@ function MyApp({ Component, pageProps }: AppProps) {
                   <Component {...pageProps} />
                   <Scrolltop articleRef={articleRef} />
                 </Layout>
-              </ErrorBoundary>
-            </div>
+              </div>
+            </ErrorBoundary>
           </GoogleOAuthProvider>
         </PersistGate>
       </Provider>
-    </div>
+    </>
   );
 }
 
