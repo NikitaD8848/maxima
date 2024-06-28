@@ -31,7 +31,6 @@ const QuickOrder = () => {
   } = useQuickOrder();
 
   const router = useRouter();
-
   const dispatch = useDispatch();
   const [ItemCodename, setItemCodename] = useState<any>();
   const [ItemCodeMinQty, setItemCodeMinQty] = useState<any>();
@@ -54,7 +53,6 @@ const QuickOrder = () => {
 
   const handleInputChange: any = (e: any, index: any) => {
     const { value } = e.target;
-    console.log('enter min val', value);
 
     setPartNumbersData((prevState: any) => {
       const updatedPartNumbersData = [...partNumbersData];
@@ -62,17 +60,14 @@ const QuickOrder = () => {
         ...updatedPartNumbersData[index],
         min_order_qty: value === '0' || value === '' ? '' : Number(value),
       };
-      console.log('enter index', updatedPartNumbersData[index], index);
       return updatedPartNumbersData;
     });
   };
 
   const handleAddToQuickOrder = () => {
-    console.log('click');
   };
 
   let handleRemove: any = (item: any) => {
-    console.log('enter name', item);
     const data = partNumbersData.filter(
       (element: any, i: any) => element.name !== item.name
     );
@@ -95,13 +90,11 @@ const QuickOrder = () => {
           quantity: val?.min_order_qty === 0 ? 1 : val?.min_order_qty,
         });
       });
-    console.log(ItemCodename, 'mmmm');
     const add_cart_response = await AddToCartApi(
       addCartData,
       currency_state_from_redux?.selected_currency_value,
       token_value
     );
-    console.log(add_cart_response, 'add_cart_response');
     // dispatch(dealerAddCartApi(addCartData));
     if (add_cart_response.msg === 'success') {
       showToast('Item Added to cart', 'success');
@@ -130,7 +123,6 @@ const QuickOrder = () => {
       </>
     );
   };
-
   return (
     <div className="container  margin_from_nav ">
       <div className="row  ">

@@ -1,0 +1,21 @@
+  article {
+    height: 100vh;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;  
+  }
+  
+  article h1 {
+    font-family: 'Roboto Slab';
+    font-size: 2.667rem;
+    font-weight: 300;
+  }
+  
+  article p {
+    font-weight: 400;
+    font-size: 1.333rem;
+    letter-spacing: 0.01rem;
+    text-align: center;
+  }
+  
